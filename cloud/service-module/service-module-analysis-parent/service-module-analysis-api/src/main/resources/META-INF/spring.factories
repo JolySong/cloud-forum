@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.iomc.forum.analysis.api.fallback.AnalysisServiceFeignFallbackFactory

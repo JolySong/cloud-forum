@@ -1,0 +1,25 @@
+# Maven
+target/
+*.iml
+.idea/
+
+# Vue.js
+node_modules/
+dist/
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment
+.env.local
+.env.*.local 

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iomc.forum.topic.dao.HotDao">
+
+
+    <select id="getHotTopics" resultType="com.iomc.forum.topic.api.vo.TopicVO">
+        SELECT t.*, c.name as categoryName, u.nickname as authorName, u.avatar as authorAvatar
+        FROM topics t
+        LEFT JOIN categories c ON t.category_id = c.id
+        LEFT JOIN users u ON t.user_id = u.id
+        WHERE t.status = 1 AND t.audit = 1
+        ORDER BY t.view_count DESC, t.like_count DESC, t.comment_count DESC
+        LIMIT #{limit}
+    </select>
+
+
+    <select id="getHotCategories" resultType="com.iomc.forum.topic.api.vo.CategoryVO">
+        SELECT
+            c.id,
+            c.name,
+            c.description,
+            COUNT(DISTINCT t.id) as topic_count,
+            SUM(t.view_count) as total_views,
+            SUM(t.comment_count) as total_comments,
+            SUM(t.like_count) as total_likes,
+            COUNT(DISTINCT CASE
+                               WHEN t.is_featured = 1 THEN t.id
+                               ELSE NULL
+                END) as featured_count,
+            COUNT(DISTINCT CASE
+                               WHEN t.created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) THEN t.id
+                               ELSE NULL
+                END) as recent_topics
+        FROM categories c
+                 LEFT JOIN topics t ON c.id = t.category_id
+        WHERE c.status = 1
+          AND (t.status = 1 OR t.status IS NULL)
+        GROUP BY c.id, c.name, c.description
+        ORDER BY (
+                     topic_count * 0.3 +
+                     total_views * 0.2 +
+                     total_comments * 0.2 +
+                     total_likes * 0.1 +
+                     featured_count * 0.1 +
+                     recent_topics * 0.1
+                     ) DESC
+            LIMIT #{limit};
+    </select>
+
+    <select id="getHotComments" resultType="com.iomc.forum.topic.api.vo.CommentVO">
+        WITH ReplyCounts AS (
+            -- 预先计算回复数
+            SELECT
+                parent_id,
+                COUNT(*) as reply_count,
+                SUM(like_count) as replies_like_count
+            FROM comments
+            WHERE status = 1 AND parent_id IS NOT NULL
+            GROUP BY parent_id
+        )
+        SELECT
+            c.id,
+            c.content,
+            c.like_count,
+            c.created_at,
+            t.id as topic_id,
+            t.title as topic_title,
+            t.view_count as topic_view_count,
+            u.id as user_id,
+            u.username as user_name,
+            u.nickname as nickname,
+            u.avatar as userAvatar,
+            COALESCE(rc.reply_count, 0) as reply_count,
+            COALESCE(rc.replies_like_count, 0) as replies_like_count,
+            -- 计算热度分数
+            (
+                c.like_count * 0.3 +
+                COALESCE(rc.reply_count, 0) * 0.3 +
+                COALESCE(rc.replies_like_count, 0) * 0.2 +
+                (CASE
+                     WHEN c.created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY) THEN 50
+                     WHEN c.created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) THEN 30
+                     WHEN c.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY) THEN 10
+                     ELSE 0
+                    END) * 0.2
+                ) as hot_score
+        FROM comments c
+                 JOIN topics t ON c.topic_id = t.id
+                 JOIN users u ON c.user_id = u.id
+                 LEFT JOIN ReplyCounts rc ON c.id = rc.parent_id
+        WHERE
+            c.status = 1
+          AND c.audit = 1
+          AND t.status = 1
+          AND c.parent_id IS NULL
+          -- 可选：只查询最近一个月的评论
+          AND c.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+        HAVING hot_score > 0  -- 确保有一定热度
+        ORDER BY hot_score DESC
+            LIMIT #{limit};
+    </select>
+
+    <!-- 获取活跃用户 -->
+    <select id="getActiveUsers"
+            resultType="com.iomc.forum.analysis.api.vo.UserStatVO">
+        WITH UserActivity AS (
+            SELECT
+                u.id,
+                u.username,
+                u.nickname,
+                u.avatar,
+                COUNT(DISTINCT t.id) as topic_count,
+                SUM(t.view_count) as total_views,
+                SUM(t.like_count) as total_topic_likes,
+                SUM(t.comment_count) as total_topic_comments,
+                COUNT(DISTINCT CASE
+                                   WHEN t.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+                                       THEN t.id
+                                   ELSE NULL
+                    END) as recent_topics,
+                (
+                    SELECT COUNT(*)
+                    FROM comments c
+                    WHERE c.user_id = u.id
+                      AND c.status = 1
+                ) as comment_count,
+                (
+                    SELECT COUNT(*)
+                    FROM comments c
+                    WHERE c.user_id = u.id
+                      AND c.status = 1
+                      AND c.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+                ) as recent_comments,
+                (
+                    SELECT COALESCE(SUM(like_count), 0)
+                    FROM comments c
+                    WHERE c.user_id = u.id
+                      AND c.status = 1
+                ) as comment_likes_received
+            FROM users u
+                     LEFT JOIN topics t ON u.id = t.user_id AND t.status = 1
+            WHERE u.status = 1
+            GROUP BY u.id, u.username, u.nickname, u.avatar, u.bio
+        )
+        SELECT
+            id,
+            username,
+            nickname,
+            avatar,
+            topic_count,
+            total_views,
+            total_topic_likes,
+            total_topic_comments,
+            recent_topics,
+            comment_count,
+            recent_comments,
+            comment_likes_received,
+            (
+                topic_count * 10 +
+                total_views * 0.01 +
+                total_topic_likes * 2 +
+                total_topic_comments * 2 +
+                recent_topics * 20 +
+                comment_count * 5 +
+                recent_comments * 10 +
+                comment_likes_received
+                ) as activity_score
+        FROM UserActivity
+        HAVING activity_score > 0
+        ORDER BY activity_score DESC
+            LIMIT #{limit}
+    </select>
+
+    <select id="getRecommendedTopics" resultType="com.iomc.forum.topic.api.vo.TopicVO">
+        WITH TopicScore AS (
+            SELECT
+                t.id,
+                t.title,
+                t.content,
+                t.view_count,
+                t.like_count,
+                t.comment_count,
+                t.created_at,
+                t.is_featured,
+                t.status,
+                t.category_id,
+                t.user_id,
+                -- 基础分数计算
+                (
+                t.view_count * 0.1 +  -- 浏览量权重
+                t.like_count * 2 +    -- 点赞权重
+                t.comment_count * 2 +  -- 评论权重
+                CASE
+                WHEN t.is_featured = 1 THEN 100  -- 精选话题加分
+                ELSE 0
+                END +
+                -- 时间衰减因子
+                CASE
+                WHEN t.created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY) THEN 100
+                WHEN t.created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) THEN 50
+                WHEN t.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY) THEN 20
+                ELSE 0
+                END
+                ) as base_score,
+                -- 如果传入了用户ID，计算用户相关性
+                <if test="userId != null">
+                    (
+                    -- 用户是否看过该分类的内容
+                    EXISTS (
+                    SELECT 1 FROM topics ut
+                    WHERE ut.user_id = #{userId}
+                    AND ut.category_id = t.category_id
+                    ) * 50 +
+                    -- 用户是否关注了作者
+                    EXISTS (
+                    SELECT 1 FROM follows uf
+                    WHERE uf.user_id = #{userId}
+                    AND uf.followed_id = t.user_id
+                    ) * 30 +
+                    -- 用户是否有相同标签的话题
+                    EXISTS (
+                    SELECT 1
+                    FROM topic_tags tt1
+                    JOIN topic_tags tt2 ON tt1.tag_id = tt2.tag_id
+                    JOIN topics ut ON tt2.topic_id = ut.id
+                    WHERE tt1.topic_id = t.id
+                    AND ut.user_id = #{userId}
+                    ) * 40
+                    ) as user_relevance,
+                </if>
+                -- 获取话题标签
+                (
+                SELECT JSON_ARRAYAGG(
+                JSON_OBJECT(
+                'id', tag.id,
+                'name', tag.name,
+                'color', tag.color)
+                )
+                FROM topic_tags tt
+                JOIN tags tag ON tt.tag_id = tag.id
+                WHERE tt.topic_id = t.id
+                ) as tags
+        FROM topics t
+        WHERE t.status = 1
+            AND t.audit = 1
+            -- 排除用户自己的话题
+            <if test="userId != null">
+                AND t.user_id != #{userId}
+            </if>
+--             排除用户已读的话题
+<!--            <if test="userId != null">-->
+<!--                AND NOT EXISTS (-->
+<!--                SELECT 1 FROM topic_views tv-->
+<!--                WHERE tv.topic_id = t.id-->
+<!--                AND tv.user_id = #{userId}-->
+<!--                )-->
+<!--            </if>-->
+            -- 可选：指定分类
+            <if test="categoryId != null">
+                AND t.category_id = #{categoryId}
+            </if>
+            -- 只查询最近一个月的内容
+            AND t.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+            )
+        SELECT
+        ts.*,
+        c.id as category_id,
+        c.name as category_name,
+        u.id as user_id,
+        u.username,
+        u.nickname,
+        u.avatar,
+        u.bio
+        FROM TopicScore ts
+        JOIN categories c ON ts.category_id = c.id
+        JOIN users u ON ts.user_id = u.id
+        ORDER BY
+        <if test="userId != null">
+            (base_score + COALESCE(user_relevance, 0))
+        </if>
+        <if test="userId == null">
+            base_score
+        </if>
+        DESC
+        LIMIT #{limit};
+    </select>
+
+</mapper>

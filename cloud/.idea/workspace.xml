@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66674410-06b7-40c6-b53c-25f7fa3054d4" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/base/BaseQueryParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/constants/ForumConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/constants/MessageConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/constants/OperationEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/exception/BizException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/exception/CommonException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/exception/ExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/global/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/global/GlobalResponseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/utils/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/java/com/iomc/common/core/utils/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-core/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-mq/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-mq/src/main/java/com/iomc/common/mq/RocketMQProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-mq/src/main/java/com/iomc/common/mq/constant/MqConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-mq/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/annotation/Logical.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/annotation/Permissions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/constant/Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/dto/LoginUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/interceptor/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/utils/SecurityUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/vo/LoginUserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-security/src/main/java/com/iomc/common/security/vo/ResourceVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/ServiceAuthApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/config/ResourceConfigInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/controller/SysResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/controller/SysRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/controller/SysRoleResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/controller/SysUserRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/dao/SysConfigDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/dao/SysResourceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/dao/SysRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/dao/SysRoleResourceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/dao/SysUserRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/entity/SysConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/entity/SysResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/entity/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/entity/SysRoleResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/entity/SysUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/ISysConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/ISysResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/ISysRoleResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/ISysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/ISysUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/impl/SysConfigServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/impl/SysResourceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/impl/SysRoleResourceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/java/com/iomc/auth/service/impl/SysUserRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/resources/dao/SysResourceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/resources/dao/SysRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/resources/dao/SysRoleResourceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-auth/src/main/resources/dao/SysUserRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-gateway/src/main/java/com/iomc/gateway/filter/JwtGlobalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-gateway/src/main/java/com/iomc/gateway/filter/ResourceFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-gateway/src/main/java/com/iomc/gateway/handler/CustomGlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-gateway/src/main/java/com/iomc/gateway/service/ResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/src/main/java/com/iomc/forum/analysis/api/fallback/AnalysisServiceFeignFallbackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/src/main/java/com/iomc/forum/analysis/api/feign/AnalysisServiceFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/src/main/java/com/iomc/forum/analysis/api/vo/SiteCountDailyStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/src/main/java/com/iomc/forum/analysis/api/vo/SiteCountVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/src/main/java/com/iomc/forum/analysis/api/vo/UserStatVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis-api/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/java/com/iomc/forum/analysis/ServiceAnalysisApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/java/com/iomc/forum/analysis/controller/AnalysisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/java/com/iomc/forum/analysis/controller/InnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/java/com/iomc/forum/analysis/dao/AnalysisDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/java/com/iomc/forum/analysis/service/AnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/java/com/iomc/forum/analysis/service/impl/AnalysisServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/resources/dao/AnalysisDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file-api/src/main/java/com/iomc/forum/file/api/dto/FileDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file-api/src/main/java/com/iomc/forum/file/api/fallback/FileServiceFeignFallbackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file-api/src/main/java/com/iomc/forum/file/api/feign/FileServiceFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file-api/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/src/main/java/com/iomc/forum/file/ServiceFileApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/src/main/java/com/iomc/forum/file/config/InterceptorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/src/main/java/com/iomc/forum/file/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/src/main/java/com/iomc/forum/file/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/src/main/java/com/iomc/forum/file/service/impl/FileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-file-parent/service-module-file/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/dto/EmailSendDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/dto/MessageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/dto/TopicMessageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/entity/EmailSendRecords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/entity/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/entity/MessageCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/entity/MessageQuote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/mapstruct/EmailSendMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/mapstruct/MessageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/utils/MessageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/vo/EmailSendVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/ServiceMessageApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/controller/EmailSendRecordsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/controller/InnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/controller/MessageCountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/controller/MessageQuoteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/dao/EmailSendRecordsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/dao/MessageCountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/dao/MessageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/dao/MessageQuoteDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/mq/AuthMQConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/mq/TopicMQConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/IEmailSendRecordsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/IMessageCountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/IMessageQuoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/IMessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/impl/EmailSendRecordsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/impl/MessageCountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/impl/MessageQuoteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/resources/dao/EmailSendRecordsDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/dto/CategoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/dto/CommentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/dto/TagDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/dto/TopicDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Collect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Follow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Like.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/Topic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/TopicTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/entity/TopicView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/fallback/TopicServiceFeignFallbackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/feign/TopicServiceFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/mapstruct/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/mapstruct/TagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/mapstruct/TopicMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/vo/CategoryVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/vo/CommentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/vo/TagVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/vo/TopicVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/java/com/iomc/forum/topic/api/vo/UserLikeVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic-api/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/ServiceTopicApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/controller/HotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/controller/InnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/controller/TagController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/controller/TopicController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/CollectDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/CommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/FollowDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/HotDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/LikeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/TagDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/TopicDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/TopicTagDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/dao/TopicViewDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/handler/JsonTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/CollectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/FollowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/TagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/TopicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/TopicTagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/TopicViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/CollectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/FollowServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/LikeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/TopicServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/TopicTagServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/java/com/iomc/forum/topic/service/impl/TopicViewServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/resources/dao/CategoryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/resources/dao/CommentDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/resources/dao/HotDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/resources/dao/LikeDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-topic-parent/service-module-topic/src/main/resources/dao/TopicDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/java/com/iomc/forum/user/api/dto/UserUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/java/com/iomc/forum/user/api/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/java/com/iomc/forum/user/api/fallback/UserServiceFeignFallbackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/java/com/iomc/forum/user/api/feign/UserServiceFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/java/com/iomc/forum/user/api/mapstruct/UserProfileMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/java/com/iomc/forum/user/api/vo/UserProfileVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user-api/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/java/com/iomc/forum/user/ServiceUserProfileApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/java/com/iomc/forum/user/controller/InnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/java/com/iomc/forum/user/controller/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/java/com/iomc/forum/user/dao/UserProfileDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/java/com/iomc/forum/user/service/UserProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/java/com/iomc/forum/user/service/impl/UserProfileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-module/service-module-user-parent/service-module-user/src/main/resources/dao/UserProfileDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/common/constant/ForumConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/common/constant/OperationEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/common/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/common/security/LoginUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/common/utils/SecurityUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/common/utils/StrUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/config/EasySqlInjector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/config/SpiceBaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/BannerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/HotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/TagController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/controller/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/dto/CommentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/dto/QueryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/dto/TagDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/dto/UserLoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/entity/Collect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/entity/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/entity/TopicView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/handler/JsonTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/mapper/CollectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/mapper/HotMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/mapper/TagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/mapper/TopicViewMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/mapper/UserProfileMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/service/CollectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/service/TagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/service/UserProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/service/impl/CollectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/service/impl/UserProfileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/AuthorInfoVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/CategoryVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/CommentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/DailyActivityStatsVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/SiteCountDailyStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/SiteCountVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/TagVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/TopicDetailVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/java/com/forum/vo/UserLikeVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/resources/mapper/HotMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forum-ui/forum/src/main/resources/mapper/UserProfileMapper.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="$PROJECT_DIR$/../../../../software/maven-3.9.6" />
+        <option name="localRepository" value="$PROJECT_DIR$/../../../../software/maven-3.9.6/repo" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../../software/maven-3.9.6/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2pW0NSqu8OqYpl6xq2drpp8SdSI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP 请求.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.admin-cloud [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.admin-cloud [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common-core [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-auth [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-module-message-parent [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-module-topic-parent [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-module-topic-parent [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-module-user-parent [clean].executor&quot;: &quot;Run&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.GateWayApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceAnalysisApplication (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceAnalysisApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceAuthApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceFileApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceForumApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceMessageApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceTopicApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ServiceUserProfileApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/song/Documents/project/web/forum/cloud/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.iomc.auth.pojo.po" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/service" />
+      <recent name="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/controller" />
+      <recent name="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message/src/main/java/com/iomc/forum/message/dao" />
+      <recent name="$PROJECT_DIR$/service-module/service-module-message-parent/service-module-message-api/src/main/java/com/iomc/forum/message/api/entity" />
+      <recent name="$PROJECT_DIR$/common/common-core/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service-module/service-module-analysis-parent/service-module-analysis/src/main/resources/dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.iomc.forum.message.api.mapstruct" />
+      <recent name="com.iomc.forum.message.api.entity" />
+      <recent name="com.iomc.common.core.global" />
+      <recent name="com.iomc.common.core.exception" />
+      <recent name="com.iomc.forum.file.api.feign" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ServiceFileApplication">
+    <configuration name="GateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.gateway.GateWayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceAnalysisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-module-analysis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.forum.analysis.ServiceAnalysisApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.forum.analysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.auth.ServiceAuthApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceFileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-module-file" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.forum.file.ServiceFileApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.forum.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceMessageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-module-message" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.forum.message.ServiceMessageApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.forum.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTopicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-module-topic" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.forum.topic.ServiceTopicApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.forum.topic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceUserProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-module-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iomc.forum.user.ServiceUserProfileApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iomc.forum.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.GateWayApplication" />
+      <item itemvalue="Spring Boot.ServiceUserProfileApplication" />
+      <item itemvalue="Spring Boot.ServiceAnalysisApplication" />
+      <item itemvalue="Spring Boot.ServiceAuthApplication" />
+      <item itemvalue="Spring Boot.ServiceFileApplication" />
+      <item itemvalue="Spring Boot.ServiceMessageApplication" />
+      <item itemvalue="Spring Boot.ServiceTopicApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ServiceMessageApplication" />
+        <item itemvalue="Spring Boot.ServiceTopicApplication" />
+        <item itemvalue="Spring Boot.ServiceFileApplication" />
+        <item itemvalue="Spring Boot.ServiceAuthApplication" />
+        <item itemvalue="Spring Boot.ServiceAnalysisApplication" />
+        <item itemvalue="Spring Boot.ServiceUserProfileApplication" />
+        <item itemvalue="Spring Boot.GateWayApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="66674410-06b7-40c6-b53c-25f7fa3054d4" name="更改" comment="" />
+      <created>1732866483996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732866483996</updated>
+      <workItem from="1732866484971" duration="9016000" />
+      <workItem from="1732925576378" duration="581000" />
+      <workItem from="1732941923625" duration="1111000" />
+      <workItem from="1732969922978" duration="2194000" />
+      <workItem from="1733011763009" duration="1398000" />
+      <workItem from="1733149781844" duration="71000" />
+      <workItem from="1733279484140" duration="9627000" />
+      <workItem from="1733366133277" duration="1683000" />
+      <workItem from="1733406048184" duration="583000" />
+      <workItem from="1733409916209" duration="5000" />
+      <workItem from="1733414937891" duration="420000" />
+      <workItem from="1733646602314" duration="607000" />
+      <workItem from="1733652573733" duration="41244000" />
+      <workItem from="1733727976116" duration="1449000" />
+      <workItem from="1733730891366" duration="12303000" />
+      <workItem from="1733755237672" duration="183000" />
+      <workItem from="1733755609537" duration="51218000" />
+      <workItem from="1733925846447" duration="5748000" />
+      <workItem from="1733973460584" duration="30565000" />
+      <workItem from="1734009577189" duration="6098000" />
+      <workItem from="1734064807208" duration="1149000" />
+      <workItem from="1734066954482" duration="2449000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../software/maven-3.9.6/repo/org/apache/rocketmq/rocketmq-spring-boot/2.2.1/rocketmq-spring-boot-2.2.1.jar!/org/apache/rocketmq/spring/core/RocketMQTemplate.class</url>
+          <line>450</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

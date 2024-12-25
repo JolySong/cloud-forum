@@ -1,0 +1,71 @@
+Element Plus 全局样式覆盖
+:root {
+  /* 按钮相关变量 */
+  --el-button-bg-color: transparent !important;
+  --el-button-border-color: var(--border-color);
+  --el-button-text-color: var(--text-color);
+  --el-button-hover-bg-color: var(--button-hover-bg) !important;
+  --el-button-hover-border-color: var(--primary-color);
+  --el-button-active-bg-color: var(--button-hover-bg) !important;
+  --el-button-active-border-color: var(--primary-color);
+
+  /* 主要按钮 */
+  --el-button-primary-bg-color: var(--primary-color) !important;
+  --el-button-primary-border-color: var(--primary-color);
+  --el-button-primary-text-color: white;
+  --el-button-primary-hover-bg-color: var(--primary-hover) !important;
+  --el-button-primary-hover-border-color: var(--primary-hover);
+  --el-button-primary-active-bg-color: var(--primary-hover) !important;
+  --el-button-primary-active-border-color: var(--primary-hover);
+
+  /* 文字按钮 */
+  --el-button-text-bg-color: transparent !important;
+  --el-button-text-hover-bg-color: var(--button-hover-bg) !important;
+  --el-button-text-hover-color: var(--primary-color);
+  --el-button-text-color: var(--text-color);
+}
+
+/* 按钮样式覆盖 */
+.el-button {
+  --el-button-hover-text-color: var(--primary-color);
+  --el-button-disabled-bg-color: var(--button-hover-bg);
+  --el-button-disabled-border-color: var(--border-color);
+  --el-button-disabled-text-color: var(--text-light);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* 主要按钮样式 */
+.el-button--primary {
+  --el-button-hover-text-color: white;
+  --el-button-active-color: white;
+  color: white !important;
+  background-color: var(--primary-color) !important;
+}
+
+/* 文字按钮样式 */
+.el-button.is-text {
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: var(--text-color);
+}
+
+.el-button.is-text:not(.is-disabled):hover {
+  border-color: transparent;
+  color: var(--primary-color);
+}
+
+/* 深色模式适配 */
+:root.dark-theme {
+  .el-button {
+    color: var(--text-color);
+  }
+
+  .el-button--primary {
+    color: rgb(4, 3, 3) !important;
+  }
+
+  .el-button.is-text {
+    color: var(--text-color);
+  }
+} 

@@ -1,0 +1,23 @@
+.icon-sun::before {
+  content: "☀️";
+}
+
+.icon-moon::before {
+  content: "🌙";
+}
+
+.icon-search::before {
+  content: "🔍";
+}
+
+.icon-home::before {
+  content: "🏠";
+}
+
+.icon-chevron-right::before {
+  content: "›";
+}
+
+.icon-arrow-left::before {
+  content: "←";
+} 

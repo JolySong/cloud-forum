@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.iomc.common.security.config.AuthProperties, \
+  com.iomc.common.security.interceptor.UrlInterceptor, \
+  com.iomc.common.security.interceptor.JWTInterceptor, \
+  com.iomc.common.security.interceptor.FeignInterceptor, \
+  com.iomc.common.security.utils.SecurityUtils

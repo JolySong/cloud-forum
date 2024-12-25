@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iomc.forum.analysis.dao.AnalysisDao">
+
+    <!-- 获取用户统计信息 -->
+    <select id="selectUserStats" resultType="com.iomc.forum.analysis.api.vo.UserStatVO"
+            parameterType="java.lang.Long">
+        SELECT
+                (SELECT COUNT(*) FROM topics WHERE user_id = #{userId} AND status = 1) as topicCount,
+                (SELECT COUNT(*) FROM comments WHERE user_id = #{userId}) as commentCount,
+                (SELECT COUNT(*) FROM collects WHERE user_id = #{userId}) as collectCount,
+                (SELECT
+                     SUM( t.like_count + c.like_count) likeCount
+                 FROM
+                     topics t
+                     LEFT JOIN comments c ON c.user_id = #{userId}
+                 WHERE
+                     t.user_id = #{userId}) as likeCount,
+                (SELECT COUNT(*) FROM follows WHERE user_id = #{userId}) as followCount,
+                (SELECT COUNT(*) FROM follows WHERE followed_id = #{userId}) as followerCount,
+                <if test="currentUserId != null and currentUserId != userId">
+                    (SELECT count(1) FROM follows WHERE user_id = #{currentUserId} AND followed_id = #{userId}) as isFollowed,
+                </if>
+                u.id userId,
+                u.avatar,
+                u.username,
+                u.nickname,
+                u.email,
+                u.bio,
+                u.created_at as createdAt
+        FROM users u
+        WHERE u.id = #{userId}
+
+    </select>
+
+    <!-- 获取站点统计数据 -->
+    <select id="selectSiteCount" resultType="com.iomc.forum.analysis.api.vo.SiteCountVO">
+        SELECT
+            (
+                SELECT COUNT(*)
+                FROM users
+                WHERE status = 1
+            ) as user_count,
+
+            (
+                SELECT COUNT(*)
+                FROM topics
+                WHERE status = 1
+            ) as topic_count,
+
+            (
+                SELECT COUNT(*)
+                FROM comments
+                WHERE status = 1
+            ) as comment_count,
+
+            (
+                SELECT COALESCE(SUM(view_count), 0)
+                FROM topics
+                WHERE status = 1
+            ) as view_count
+    </select>
+
+    <!-- 获取每日趋势数据 -->
+    <select id="getDailyTrend" resultType="com.iomc.forum.analysis.api.vo.SiteCountDailyStats">
+        WITH RECURSIVE DateRange AS (
+            SELECT CURDATE() - INTERVAL 6 DAY as date
+        UNION ALL
+        SELECT date + INTERVAL 1 DAY
+        FROM DateRange
+        WHERE date &lt; CURDATE()
+            )
+        SELECT
+            DATE_FORMAT(d.date, '%Y-%m-%d') as date,
+        COALESCE(COUNT(DISTINCT t.id), 0) as topicCount,
+        COALESCE(COUNT(DISTINCT c.id), 0) as commentCount
+        FROM DateRange d
+            LEFT JOIN topics t ON DATE(t.created_at) = d.date AND t.status = 1
+            LEFT JOIN comments c ON DATE(c.created_at) = d.date AND c.status = 1
+        GROUP BY d.date
+        ORDER BY d.date;
+    </select>
+</mapper>
