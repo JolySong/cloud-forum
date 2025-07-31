@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>uniform-identity-authentication</name>
-    <description>统一身份认证</description>
+    <name>forum</name>
+    <description>论坛系统</description>
     <modules>
         <module>common</module>
         <module>service-gateway</module>
@@ -28,6 +28,9 @@
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
         <mysql.version>8.0.28</mysql.version>
         <mybatis-plus.version>3.5.4</mybatis-plus.version>
+
+        <rocketmq.version>2.2.3</rocketmq.version>
+        <httpclient.version>11.8</httpclient.version>
 
         <jwt.version>3.10.0</jwt.version>
         <fastjson.version>2.0.43</fastjson.version>
@@ -54,14 +57,14 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2021.0.1</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2021.0.1.0</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -86,6 +89,13 @@
                 <version>${mysql.version}</version>
             </dependency>
 
+            <!-- rocketMq -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
+            </dependency>
+
             <!-- mybatis-plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -96,7 +106,7 @@
             <dependency>
                 <groupId>io.github.openfeign</groupId>
                 <artifactId>feign-httpclient</artifactId>
-                <version>11.8</version>
+                <version>${httpclient.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

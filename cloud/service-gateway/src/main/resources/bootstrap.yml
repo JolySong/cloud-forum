@@ -23,8 +23,8 @@ spring:
       config:
         server-addr: ${spring.cloud.nacos.ipAddr}
         extension-configs: [
-          { data-id: 'service-common.yaml',group: 'DEFAULT_GROUP',refresh: true },
-          { data-id: '${spring.application.name}.yaml',group: 'DEFAULT_GROUP',refresh: true }
+          { data-id: 'service-common.yaml',group: 'DEFAULT_GROUP-3',refresh: true },
+          { data-id: '${spring.application.name}.yaml',group: 'DEFAULT_GROUP-3',refresh: true }
         ]
         # 命名空间ID，不能跨命名空间调用配置，public默认命名空间id为空
         namespace: ${spring.cloud.nacos.namespace}
