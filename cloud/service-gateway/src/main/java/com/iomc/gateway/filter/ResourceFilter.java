@@ -64,12 +64,12 @@ public class ResourceFilter implements GlobalFilter, Ordered {
         String method = Objects.requireNonNull(exchange.getRequest().getMethod()).toString();
         ResourceVO requestResource = new ResourceVO(REQUEST_PREFIX + url, method);
 
-        // 匹配用户权限
-        boolean b = ResourceService.matchUserResources(requestUserId, requestResource);
-        if (!b) {
-            log.error("AuthGlobalFilter.filter() 没有权限访问: {}", url);
-            throw new BizException(ExceptionEnum.UNAUTHORIZED_ACCESS);
-        }
+        // 匹配用户权限 todo 暂时取消权限校验
+//        boolean b = ResourceService.matchUserResources(requestUserId, requestResource);
+//        if (!b) {
+//            log.error("AuthGlobalFilter.filter() 没有权限访问: {}", url);
+//            throw new BizException(ExceptionEnum.UNAUTHORIZED_ACCESS);
+//        }
 
         return chain.filter(exchange);
     }

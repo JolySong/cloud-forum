@@ -7,7 +7,6 @@ spring:
   application:
     # 应用名称
     name: service-module-topic
-
   cloud:
     nacos:
       ipAddr: 10.0.0.12:8848

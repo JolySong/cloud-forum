@@ -21,7 +21,15 @@ public class InterceptorConfig implements WebMvcConfigurer {
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 适配windows
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().startsWith("win")) {
+            uploadPath = uploadPath.replace("/", "\\");
+        } else {
+            uploadPath = uploadPath.replace("\\", "/");
+        }
+
         registry.addResourceHandler("/files/**")
-                .addResourceLocations("file:" + uploadPath);
+                .addResourceLocations("classpath:" + uploadPath);
     }
 }

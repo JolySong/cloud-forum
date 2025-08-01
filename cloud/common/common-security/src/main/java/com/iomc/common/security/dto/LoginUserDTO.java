@@ -24,4 +24,10 @@ public class LoginUserDTO {
 
     /** 设备 */
     private String device;
+
+    /** 记住我 */
+    private Boolean remember;
+
+    /** uuid */
+    private String uuid;
 }

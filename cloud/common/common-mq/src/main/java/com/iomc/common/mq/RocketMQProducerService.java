@@ -67,7 +67,7 @@ public class RocketMQProducerService {
             log.info("【sendMsg】sendResult={}", message);
             return sendResult;
         } catch (Exception e) {
-            log.error("发送消息失败：{}", e.getStackTrace());
+            log.error("发送消息失败：{}", (Object) e.getStackTrace());
             throw new BizException("发送消息失败: " + e.getMessage());
         }
     }

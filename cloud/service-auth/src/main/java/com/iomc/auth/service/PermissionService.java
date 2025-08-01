@@ -32,6 +32,35 @@ public class PermissionService {
      * 加载用户权限到Redis
      */
     public void loadUserPermissions(Long userId) {
+
+        List<SysResource> sysResources = getSysResourcesByUserId(userId);
+
+        if (ListUtils.isNotEmpty(sysResources)) {
+            List<ResourceVO> resourceVOS = new ArrayList<>();
+            sysResources.forEach(resource ->
+                resourceVOS.add(new ResourceVO(resource.getApiUrl(), resource.getMethod())));
+
+            RedisUtil.set(Const.USER_PERMISSIONS_KEY + userId, resourceVOS, 24 * 60 * 60 * 1000L);
+        }
+    }
+
+    /**
+     * 根据用户id获取用户权限
+     *
+     * @param userId
+     * @return
+     */
+    private List<SysResource> getSysResourcesByUserId(Long userId) {
+
+        // 超级管理员
+        if (userId == 1L) {
+            return sysResourceService.list(
+                    new LambdaQueryWrapper<SysResource>()
+                            .eq(SysResource::getDeleted, 0)
+                            .eq(SysResource::getIsPublic, 0)
+                            .eq(SysResource::getResourceType, "A"));
+        }
+
         // 获取用户角色
         List<SysUserRole> sysUserRoles =
                 sysUserRoleService.list(
@@ -51,21 +80,16 @@ public class PermissionService {
         List<Long> resourceIds = sysRoleResources.stream()
                 .map(SysRoleResource::getResourceId)
                 .collect(Collectors.toList());
-        List<SysResource> sysResources =
-                sysResourceService.list(
-                        new LambdaQueryWrapper<SysResource>()
-                                .eq(SysResource::getDeleted, 0)
-                                .eq(SysResource::getIsPublic, 0)
-                                .eq(SysResource::getResourceType, "A")
-                                .in(SysResource::getId, resourceIds));
-
-        if (ListUtils.isNotEmpty(sysResources)) {
-            List<ResourceVO> resourceVOS = new ArrayList<>();
-            sysResources.forEach(resource ->
-                resourceVOS.add(new ResourceVO(resource.getApiUrl(), resource.getMethod())));
-
-            RedisUtil.set(Const.USER_PERMISSIONS_KEY + userId, resourceVOS, 24 * 60 * 60 * 1000L);
+        if (ListUtils.isEmpty(resourceIds)) {
+            return null;
         }
+
+        return sysResourceService.list(
+                new LambdaQueryWrapper<SysResource>()
+                        .eq(SysResource::getDeleted, 0)
+                        .eq(SysResource::getIsPublic, 0)
+                        .eq(SysResource::getResourceType, "A")
+                        .in(SysResource::getId, resourceIds));
     }
 
     /**
